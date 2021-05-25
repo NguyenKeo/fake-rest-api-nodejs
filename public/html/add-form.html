@@ -1,0 +1,135 @@
+<!-- Bài tập về nhà Ngày 17/05/2021-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Add infomation student</title>
+  <!-- Icon -->
+  <link rel="shortcut icon" href="../img/favicon.jpg" type="image/x-icon">
+
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+
+  <!-- slick crocell -->
+  <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" /> -->
+  <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
+  <!-- slick crocell CDN CSS -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <div class="container-fluid pb-5 pt-1">
+
+    <div class="container mt-5">
+
+      <h1 class="text-center">Thêm mới học viên</h1>
+
+      <div class="form-frame mt-5">
+        <!-- name -->
+        <div class="row mb-3">
+          <label for="name" class="col-sm-3 col-form-label">Họ tên
+            <span class="text-danger">*</span>
+          </label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" autocomplete="nope">
+            <small class="error-mess">Error message - báo lỗi </small>
+          </div>
+
+        </div>
+        <!-- ngày sinh -->
+        <div class="row mb-3">
+          <label for="birthday" class="col-sm-3 col-form-label">Ngày sinh</label>
+
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id="birthday" autocomplete="on">
+          </div>
+
+        </div>
+        <!--  -->
+        <div class="row mb-3">
+
+          <label for="email" class="col-sm-3 col-form-label">Email
+            <span class="text-danger">*</span>
+          </label>
+
+          <div class="col-sm-9">
+            <input type="email" class="form-control" id="email" autocomplete="off">
+
+            <small class="invalid-feedback error">Error message</small>
+          </div>
+
+        </div>
+        <!--  -->
+        <div class="row mb-3">
+          <label for="phone" class="col-sm-3 col-form-label">Số điện thoại
+            <span class="text-danger">*</span>
+          </label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="phone" autocomplete="nope">
+            <small class="invalid-feedback error">Error message</small>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class=" text-center mt-4">
+
+          <a href="../index.html" type="button" class="btn btn-back" style="background-color: #6A757C; color: white;">
+            <i class="fas fa-chevron-circle-left"></i>
+            <span class="ms-1">Quay lại</span>
+          </a>
+
+          <button class="btn btn-success ms-2 btn-add-data-save">
+            <i class="fas fa-save"></i>
+            <span class="ms-1">Lưu</span>
+          </button>
+
+          <!-- <button class="back btn btn-defaul">back</button> -->
+
+        </div>
+
+      </div> <!-- form-frame -->
+
+    </div> <!-- containe -->
+
+  </div> <!-- container-fluid -->
+
+
+
+
+
+
+
+
+  <!-- Thư viện Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- File js -->
+  <!-- Tệp js thêm học sinh -->
+  <script src="../js/add-info.js"></script>
+
+  
+
+</body>
+
+</html>
