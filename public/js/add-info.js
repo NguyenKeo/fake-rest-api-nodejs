@@ -6,14 +6,16 @@ console.log("Thêm thông tin học sinh")
 $(".btn-add-data-save").click(function () {
 
     let newUser = {
-        name: $("#name").val(),
+
+        firstName: $("#first-name").val(),
+        lastName: $("#last-name").val(),
         birthday: $("#birthday").val(),
         email: $("#email").val(),
         phone: $("#phone").val(),
     };
 
     addUserApi(newUser);
-    backIndex()
+
 });
 
 function addUserApi(user) {
@@ -23,16 +25,10 @@ function addUserApi(user) {
         //   Gán thêm data mới vào nguồn data của API
         data: user,
     }).done(function () {
-        window.location.href = "localhost:3000";
+        // sau hàm done-xong là toàn trang dẫn về đường / mặc định là trang chủ luôn
+        window.location.href = "/";
     });
 }
 
-// $(".back").click(function () {
-//     console.log("back")
-//     window.location.replace("localhost:3000");
-// });
 
-function backIndex() {
-    window.location.replace("localhost:3000");
-}
     

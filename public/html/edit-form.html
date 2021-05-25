@@ -40,19 +40,7 @@
       <h1 class="text-center">Chỉnh sửa thông tin học viên</h1>
 
       <div class="form-frame mt-5">
-        <!--  -->
-        <div class="row mb-3">
-          <label for="name" class="col-sm-3 col-form-label">Tên
-            <span class="text-danger">*</span>
-          </label>
-
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="first-name" autocomplete="nope">
-            <small class="error-mess">Error message - báo lỗi </small>
-          </div>
-
-        </div>
-        <!--  -->
+        <!-- Họ đệm -->
         <div class="row mb-3">
           <label for="name" class="col-sm-3 col-form-label">Họ đệm
             <span class="text-danger">*</span>
@@ -64,16 +52,31 @@
           </div>
 
         </div>
-        <!--  -->
+        
+        <!-- Tên -->
+        <div class="row mb-3">
+          <label for="name" class="col-sm-3 col-form-label">Tên
+            <span class="text-danger">*</span>
+          </label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="first-name" autocomplete="nope">
+            <small class="error-mess">Error message - báo lỗi </small>
+          </div>
+
+        </div>
+
+        <!-- Ngày sinh -->
         <div class="row mb-3">
           <label for="birthday" class="col-sm-3 col-form-label">Ngày sinh</label>
 
           <div class="col-sm-9">
-            <input type="date" class="form-control" id="birthday-edit" autocomplete="on">
+            <input type="date" class="form-control" id="birthday" autocomplete="on">
           </div>
 
         </div>
-        <!--  -->
+        
+        <!-- Email -->
         <div class="row mb-3">
 
           <label for="email" class="col-sm-3 col-form-label">Email
@@ -81,20 +84,21 @@
           </label>
 
           <div class="col-sm-9">
-            <input type="email" class="form-control" id="email-edit" autocomplete="off">
+            <input type="email" class="form-control" id="email" autocomplete="off">
 
             <small class="invalid-feedback error">Error message</small>
           </div>
 
         </div>
-        <!--  -->
+        
+        <!-- Số điện thoại -->
         <div class="row mb-3">
           <label for="phone" class="col-sm-3 col-form-label">Số điện thoại
             <span class="text-danger">*</span>
           </label>
 
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="phone-edit" autocomplete="nope">
+            <input type="text" class="form-control" id="phone" autocomplete="nope">
             <small class="invalid-feedback error">Error message</small>
           </div>
         </div>
@@ -107,7 +111,7 @@
             <span class="ms-1">Quay lại</span>
           </a>
 
-          <button class="btn btn-success ms-2 btn-save">
+          <button class="btn btn-success ms-2 btn-edit-data-save">
             <i class="fas fa-save"></i>
             <span class="ms-1">Lưu</span>
           </button>

@@ -19,18 +19,16 @@ function loadDoc() {
             for (let i = 0; i < users.length; i++) {
                 const user = users[i];
 
-              
-
                 content += `
                 <tr>
-                    <th>${users[i].firstName} ${users[i].lastName} ${users[i].id}</th>
+                    <th>${users[i].lastName} ${users[i].firstName} ${user.id}</th>
                     <td>${users[i].birthday}</td>
                     <td>${users[i].email}</td>
                     <td>${users[i].phone}</td>
 
                     <td class="text-center td-edit-btn">
                        
-                        <a  href="./html/edit-form.html/${users[i].id}" style="color: #01A4B6;" class="btn-open-edit-modal   text-decoration-none px-1">
+                        <a  href="./html/edit-form.html?id=${user.id}" style="color: #01A4B6;" class="btn-open-edit-modal   text-decoration-none px-1">
                             <i class="fas fa-edit"></i>
                             <span>Chỉnh sửa</span>
                         </a>
@@ -47,11 +45,13 @@ function loadDoc() {
             }
             // Tìm đến id của thẻ có id đó, và thay đội dung html của thẻ bên trong thẻ bọc đó
             document.getElementById("table-users").innerHTML = content;
+            // $("#table-users").html(content);
 
         } else if (this.readyState == 4 && this.status == 404) {
             console.log("Không tìm thấy user");
         }
     };
+    // Lấy danh sách data từ file json công khai ra
     xhttp.open("GET", "http://localhost:3000/users", true);
     // xhttp.open("GET", "/users", true);
     xhttp.send();
