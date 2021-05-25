@@ -21,7 +21,7 @@ function loadDoc() {
 
                 content += `
                 <tr>
-                    <th>${users[i].lastName} ${users[i].firstName} ${user.id}</th>
+                    <th>${users[i].lastName} ${users[i].firstName}</th>
                     <td>${users[i].birthday}</td>
                     <td>${users[i].email}</td>
                     <td>${users[i].phone}</td>
