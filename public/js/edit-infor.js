@@ -86,33 +86,36 @@ loadDoc()
 
 
 
-// $(".btn-edit-data-save").click(function () {
+$(".btn-edit-data-save").click(function () {
 
-//     // Lấy dữ liệu từ ô input
-//     let newUser = {
+    // Lấy dữ liệu từ ô input
+    let newUser = {
 
-//         firstName: $("#first-name").val(),
-//         lastName: $("#last-name").val(),
-//         birthday: $("#birthday").val(),
-//         email: $("#email").val(),
-//         phone: $("#phone").val(),
-//     };
-//     console.log('newUser', newUser)
-//     editUserApi(newUser);
+        firstName: $("#first-name").val(),
+        lastName: $("#last-name").val(),
+        birthday: $("#birthday").val(),
+        email: $("#email").val(),
+        phone: $("#phone").val(),
+    };
+    console.log('newUser', newUser)
+    editUserApi(newUser);
 
-// });
+});
 
-// function editUserApi(user) {
-//     $.ajax({
-//         method: "POST",
-//         url: "http://localhost:3000/users",
-//         //   Gán thêm data mới vào nguồn data của API
-//         data: user,
-//     }).done(function () {
-//         // sau hàm done-xong là toàn trang dẫn về đường / mặc định là trang chủ luôn
-//         window.location.href = "/";
-//     });
-// }
+function editUserApi(user) {
+    $.ajax({
+        method: "POST",
+        url: "http://localhost:3000/users",
+        //   Gán thêm data mới vào nguồn data của API
+        data: user,
+    }).done(function () {
+        // sau hàm done-xong là toàn trang dẫn về đường / mặc định là trang chủ luôn
+        window.location.href = "/";
+    });
+}
+
+
+
 
 
 

@@ -155,34 +155,14 @@
       "id": 11
     },
     {
-      "firstName": "Nguyên",
+      "firstName": "Nguyên 2",
       "lastName": "Nguyễn Trung",
       "birthday": "1996-02-22",
       "email": "nguyentrungnguyenth14@gmail.com",
       "phone": "0988360149",
-      "createdAt": 1621954340730,
-      "modifiedAt": 1621954340730,
+      "createdAt": 1621960649622,
+      "modifiedAt": 1621960649622,
       "id": 12
-    },
-    {
-      "firstName": "Nguyên",
-      "lastName": "Nguyễn Trung",
-      "birthday": "1996-02-22",
-      "email": "nguyentrungnguyenth14@gmail.com",
-      "phone": "0988360149",
-      "createdAt": 1621954352038,
-      "modifiedAt": 1621954352038,
-      "id": 13
-    },
-    {
-      "firstName": "Administrator 2",
-      "lastName": "Admin",
-      "birthday": "1994-03-23",
-      "email": "admin@gmail.com",
-      "phone": "933-658-1213",
-      "createdAt": 1621959355133,
-      "modifiedAt": 1621959355133,
-      "id": 14
     }
   ],
   "products": [
