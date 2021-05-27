@@ -57,8 +57,8 @@ function loadDoc() {
         }
     };
     // Lấy danh sách data từ file json công khai ra
-    xhttp.open("GET", "http://localhost:3000/users", true);
-    // xhttp.open("GET", "/users", true);
+    // xhttp.open("GET", "http://localhost:3000/users", true);
+    xhttp.open("GET", "/users", true);
     xhttp.send();
 }
 // Luôn này hàm để gọi-GET dữ liệu hiển thị lên bảng
