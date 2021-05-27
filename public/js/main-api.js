@@ -62,7 +62,7 @@ loadDoc()
 // Edit
 function editData(id) {
     console.log("Sửa", id)
-    
+
 }
 
 // Chức năng xóa 
@@ -72,15 +72,25 @@ function delData(id) {
 
     let formData = {
         method: "Delete",
-        Headers: {
-            "Content-Type": "application/json",
-        },
+        // Headers: {
+        //     "Content-Type": "application/json",
+        // },
     };
 
-    fetch("http://localhost:3000/users/" + id, formData)
-        .then(function () {
+    fetch("http://localhost:3000/users/" + id, formData).then(function () {
             loadDoc();
         });
+
+    // $.ajax({
+    //     method: "DELETE",
+    //     url: "http://localhost:3000/users" + id,
+
+    // }).done(function () {
+    //     // sau hàm done-xong là toàn trang dẫn về đường / mặc định là trang chủ luôn
+    //     window.location.href = "/";
+    // });
+
+
 }
 
 
