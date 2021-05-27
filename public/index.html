@@ -38,7 +38,7 @@
         <h1 class="text-center">Danh sách sinh viên</h1>
     </div>
 
-    <div class="container mt-3">
+    <div class="container mt-3" id="not-found-user-404">
 
         <div class="buttons">
             <div class="btn-add-student ">
@@ -54,12 +54,15 @@
         <div class="table-responsive mt-4">
             <table class="table table-primary table-hover table-bordered border-white">
                 <thead class="table-dark">
-                    
+
                     <tr>
-                        <th scope="col">Họ tên</th>
+                        <th scope="col">Họ</th>
+                        <th scope="col">Tên</th>
+
                         <th scope="col">Ngày sinh</th>
                         <th scope="col">Email</th>
                         <th scope="col">Số điện thoại</th>
+
                         <th></th>
                     </tr>
 
@@ -74,20 +77,21 @@
 
                         <td class="text-center td-edit-btn">
 
-                            <a href="./html/edit-form.html" style="color: #01A4B6;" class="btn-open-edit-modal   text-decoration-none px-1">
+                            <a href="./html/edit-form.html" style="color: #01A4B6;"
+                                class="btn-open-edit-modal   text-decoration-none px-1">
                                 <i class="fas fa-edit"></i>
                                 <span>Chỉnh sửa</span>
                             </a>
                             <!-- onclick="delData('${users[i].id}')" -->
-                            
-                            <a href="#" ${users[i].phone} class="btn-remove link-danger text-decoration-none px-1" data-bs-toggle="modal"
-                                data-bs-target="#removeModal">
+
+                            <a href="#" ${users[i].phone} class="btn-remove link-danger text-decoration-none px-1"
+                                data-bs-toggle="modal" data-bs-target="#removeModal">
                                 <i class="fas fa-trash-alt"></i>
                                 <span>Xóa</span>
                             </a>
 
                         </td>
-                        
+
                     </tr>
 
                 </tbody>
@@ -98,7 +102,7 @@
 
 
     <!-- Modal edit -->
-    <div class="modal-edit modal fade" id="myModal" role="dialog">
+    <div class="modal-del modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -106,51 +110,22 @@
 
                 <div class="modal-header">
                     <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                    <h4 class="modal-title me-2 ">Cập nhật thông tin học viên</h4>
+                    <h4 class="modal-title me-2 ">Xác nhận</h4>
                 </div>
 
                 <div class="modal-body">
-                    <div class=" form-infomations ">
-
-                        <div class=" personal-info ">
-                            <label class="input" placeholder="Họ và tên" for="name">Họ tên </label>
-                            <label class="input" placeholder="dd/mm/yyyy" for="birth">Ngày sinh </label>
-                            <label class="input" placeholder="" for="email">Email </label>
-                            <label class="input" placeholder="" for="phone">Phone </label>
-                        </div>
-
-                        <div class="personal-info-input">
-
-                            <div class="info-input ">
-                                <input type="text" id="name">
-                            </div>
-
-                            <div class="info-input ">
-                                <input type="text" id="birth">
-                            </div>
-
-                            <div class="info-input ">
-                                <input type="text" id="email">
-                            </div>
-
-                            <div class="info-input ">
-                                <input type="text" id="phone">
-                            </div>
-
-                        </div>
-                    </div>
-
+                    <p>Bạn có chắc chắn muốn xóa học viên này?</p>
                 </div>
 
 
                 <div class="modal-footer">
 
-                    <button type="button" class="btn-close-modal  btn btn-secondary" data-dismiss="modal">
-                        <i class="fas fa-chevron-left me-1 "></i><span>Hủy</span>
+                    <button type="button" class="btn-confirm-del  btn btn-secondary" data-dismiss="modal">
+                        <span>Chắc chắn xóa</span>
                     </button>
-
-                    <button class=" btn-save  btn btn-success button" type="submit" value="Submit">
-                        <i class="fas fa-save"></i><span> Lưu</span>
+                    <!-- Confirm delete   onclick="delData('${users[i].id}')"  -->
+                    <button class=" btn-cancel-del-modal  btn btn-success button" type="submit" value="Submit">
+                        <span>Hủy bỏ</span>
                     </button>
 
                 </div>
@@ -172,3 +147,26 @@
 </body>
 
 </html>
+
+<!-- <tr>
+    <th scope="row">${user.firstName} ${user.lastName}</th>
+    <td>${user.birthday || "Chưa có thông tin"}</td>
+    <td>${user.email}</td>
+    <td>${user.phone}</td>
+    <td class="text-center td-edit">
+        <a href="./html/edit.html?id=${user.id}" class="btn-edit link-success text-decoration-none px-1">
+            <i class="fas fa-edit"></i>
+            <span>Chỉnh sửa</span>
+        </a>
+        <a href="#" 
+        class="btn-remove-${user.id}  link-danger text-decoration-none px-1" 
+
+        onclick="removeUser(${user.id})"
+
+        data-bs-toggle="modal" data-bs-target="#removeUserModal"
+        >
+            <i class="fas fa-trash-alt"></i>
+            <span>Xóa</span>
+        </a>
+    </td>
+</tr> -->

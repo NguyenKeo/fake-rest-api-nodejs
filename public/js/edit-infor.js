@@ -1,39 +1,24 @@
 console.log("Edit")
 
-// lấy id parameter
-
-// let url_str = window.location.href;
-// console.log('url_str', url_str)
-// // Tạo mới đường dẫn và ghép vào chuỗi kí tự đường dẫn vào khuôn url mẫu mặc định
-// let url = new URL(url_str);
-// console.log('url - new URL: ', url)
-// // ?id
-// console.log('url.search: ', url.search)
-// // Cắt chuỗi lấy số id, cắt vị trí index 1 kết thúc 2 - ko lấy index kết thúc
-// let id = url.search.slice(4, 5)
-// console.log('id từ url =', id);
-
 // Lấy id của riêng mỗi người dùng-truyển về từ url, lấy xuống ở trạng thái parram
 function getEditId() {
-    let urlQueryPart = window.location.search;
-    console.log("urlQueryPart: ", urlQueryPart)
+    let urlQueryParameters = window.location.search;
+    console.log("urlQueryParameters: ", urlQueryParameters) // ?id=1
 
-    let urlParams = new URLSearchParams(urlQueryPart);
+    let urlParams = new URLSearchParams(urlQueryParameters); // 1 
+    console.log("URLSearchParams: ", URLSearchParams )
     console.log("id Params: ", urlParams.get("id"))
 
     return urlParams.get("id");
-
 }
-getEditId()
+
 // CHẠY Hàm đã trả về 1 số là id đã xác định rồi-lưu vào biến
 let editId = getEditId();
-
-// Ready function - Đảm bảo đến hàm bên trong sẽ luôn được chạy
+// Ready function - Đảm bảo đến hàm bên trong sẽ luôn được chạy theo thứ tự trên-dưới
 $(function () {
-    // Luôn chạy hàm lấy thông tin user với id truyền vào
+    // Luôn chạy hàm lấy thông tin user với id truyền vào ĐẦU TIÊN 
     getUserInfoApi(editId);
 });
-
 // Lấy thông tin user cần edit
 function getUserInfoApi(id) {
     $.ajax({
@@ -44,6 +29,7 @@ function getUserInfoApi(id) {
     });
 }
 
+// getUserInfoApi()
 // Hàm gán lại thông tin user vào giá trị val() của ô input
 function renderUserInfo(user) {
     $("#first-name").val(user.firstName);
@@ -51,46 +37,57 @@ function renderUserInfo(user) {
     $("#birthday").val(user.birthday);
     $("#email").val(user.email);
     $("#phone").val(user.phone);
-  }
+}
 
-  // Sau khi đã thay đổi thông tin user ở giá trị các ô input
-  // Cập nhật lại thông tin mới cho user
-  function updateUserApi(user) {
-    $.ajax({
-      method: "PUT",
-      url: "/users/" + user.id,
-      // ở đường dẫn GET all data xác định = id đó, dữ liệu sẽ được đổ lại từ nút Edit đưa về
-      data: user,
-    }).done(function () {
-      // xong thì chuyển về trang chủ GET
-      window.location.href = "/";
-    });
-  }
 
-  // Nút lưu cũng cập nhập lại - ghi đè thông tin user
-  // Khi nhấn nút mới gán giá trị HIỆN TẠI ở mỗi ô input vào mỗi trường tương úng
-  // Sau là chạy hàm để với phương thức PUT đề update (user = updatedUser)
-  // Nút save mang thông tin gắn với mỗi trường truyền lại cho hàm update
-  $(".btn-edit-data-save").click(function () {
+// Nút lưu cũng cập nhập lại - ghi đè thông tin user
+// Khi nhấn nút mới gán giá trị HIỆN TẠI ở mỗi ô input vào mỗi trường tương úng
+// Sau là chạy hàm để với phương thức PUT đề update (user = updatedUser)
+// Nút save mang thông tin gắn với mỗi trường truyền lại cho hàm update
+$(".btn-edit-data-save").click(function () {
 
-      let updatedUser = {
+    let updatedUser = {
         // Cần truyền kèm ID để căn đúng người nào với người nào
-        // id: editId,
+        id: editId,
         firstName: $("#first-name").val(),
         lastName: $("#last-name").val(),
         birthday: $("#birthday").val(),
         email: $("#email").val(),
         phone: $("#phone").val(),
-      };
-
-      updateUserApi(updatedUser);
-
-  });
+    };
+    updateUserApi(updatedUser);
+});
 
 
+// Sau khi đã thay đổi thông tin user ở giá trị các ô input
+// Cập nhật lại thông tin mới cho user
+function updateUserApi(user) {
+    $.ajax({
+        method: "PUT",
+        url: "/users/" + user.id,
+        // Ở đường dẫn GET all data xác định = id đó, dữ liệu sẽ được đổ lại từ nút Edit đưa về
+        data: user,
+    }).done(function () {
+        // xong thì chuyển về trang chủ GET
+        window.location.href = "/";
+    });
+}
 
 
 
+
+
+// lấy id parameter
+// let url_str = window.location.href;
+// console.log('url_str', url_str)
+// // Tạo mới đường dẫn và ghép vào chuỗi kí tự đường dẫn vào khuôn url mẫu mặc định
+// let url = new URL(url_str);
+// console.log('url - new URL: ', url)
+// // ?id
+// console.log('url.search: ', url.search)
+// // Cắt chuỗi lấy số id, cắt vị trí index 1 kết thúc 2 - ko lấy index kết thúc
+// let id = url.search.slice(4, 5)
+// console.log('id từ url =', id);
 
 // let users;
 // // let responseText;
