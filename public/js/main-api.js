@@ -5,7 +5,7 @@ function loadDoc() {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && this.   status == 200) {
             // Chọc và responseText của chức Năng onreadystatechange Trong phương thức XMLHttpRequest
             // Chuyển kiểu dữ liệu về dạng Mảng? và lấy giữ liệu ra
             const users = JSON.parse(this.responseText);
@@ -40,11 +40,11 @@ function loadDoc() {
                         </a>
                     </td>
                 
+                         </tr>
+                        </a>
+                    </td>
                 </tr>
-        </a>
-    </td>
-</tr>
-            `;
+                `;
             }
             // Tìm đến id của thẻ có id đó, và thay đội dung html của thẻ bên trong thẻ bọc đó
             // document.getElementById("table-users").innerHTML = content;
@@ -56,7 +56,7 @@ function loadDoc() {
             console.log("Không tìm thấy user");
         }
     };
-    // Lấy danh sách data từ file json công khai ra
+    // Lấy danh sách data từ file json công khai ra, để động /users mới được
     // xhttp.open("GET", "http://localhost:3000/users", true);
     xhttp.open("GET", "/users", true);
     xhttp.send();
@@ -81,7 +81,7 @@ function openModalRegistration(id) {
     $('.fade').css("opacity", "1")
 
     // $('.btn-confirm-del').
-    
+
 }
 console.log('id công khai: ', id_cong_khai)
 
@@ -98,15 +98,15 @@ function removeUser(id) {
     // Chạy hàm mở bảng form modal
     alert("Bạn có chắc chắn muốn xóa học viên này?")
 
-        let formData = {
-            method: "Delete",
-            Headers: {
-                "Content-Type": "application/json",
-            },
-        };
-        fetch("http://localhost:3000/users/" + id, formData).then(function () {
-            loadDoc();
-        });
+    let formData = {
+        method: "Delete",
+        Headers: {
+            "Content-Type": "application/json",
+        },
+    };
+    fetch("http://localhost:3000/users/" + id, formData).then(function () {
+        loadDoc();
+    });
     // $.ajax({
     //     method: "DELETE",
     //     url: "http://localhost:3000/users" + id,

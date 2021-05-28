@@ -65,10 +65,6 @@
 }
 /* End Danh sách học viên */
 
-
-
-
-
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Start modal */
 .fade:not(.show) {
@@ -99,43 +95,6 @@
   100% {
     opacity: 0.5;
   }
-}
-/*  */
-.form-infomations {
-  /* border: 0.1px dotted red; */
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-gap: 10px;
-}
-/*  */
-.personal-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  grid-gap: 10px;
-  font-size: 16px;
-  font-family: Rubik;
-  /* border: 0.1px dotted rgb(4, 0, 255); */
-}
-
-.personal-info-input {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  /* border: 0.1px dotted rgb(234, 0, 255); */
-}
-.info-input {
-  width: 100%;
-  border: 0.1px solid gray;
-  border-radius: 4px;
-}
-.info-input input {
-  width: 100%;
-}
-.info-input input:hover {
-  box-shadow: 1px red;
 }
 
 /* End modal */

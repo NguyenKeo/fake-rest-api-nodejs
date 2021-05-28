@@ -13,13 +13,13 @@ function getEditId() {
 }
 
 // CHẠY Hàm đã trả về 1 số là id đã xác định rồi-lưu vào biến
-let editId = getEditId();
+let editId = getEditId(); // id
 // Ready function - Đảm bảo đến hàm bên trong sẽ luôn được chạy theo thứ tự trên-dưới
 $(function () {
     // Luôn chạy hàm lấy thông tin user với id truyền vào ĐẦU TIÊN 
-    getUserInfoApi(editId);
+    getUserInfoApi(editId); // id
 });
-// Lấy thông tin user cần edit
+// Lấy thông tin user cần edit, userEdit = id
 function getUserInfoApi(id) {
     $.ajax({
         method: "GET",
