@@ -107,16 +107,16 @@ function removeUser(id) {
     fetch("http://localhost:3000/users/" + id, formData).then(function () {
         loadDoc();
     });
+
     // $.ajax({
     //     method: "DELETE",
-    //     url: "http://localhost:3000/users" + id,
+    //     url: "/users" + id,
 
-    // }).done(function () {
-    //     // sau hàm done-xong là toàn trang dẫn về đường / mặc định là trang chủ luôn
+    // })
+    // .done(function () {
     //     window.location.href = "/";
     // });
 }
-
 
 // Đóng Modal - nút Hủy bỏ
 $('.btn-cancel-del-modal').click(closeModalRegistration)

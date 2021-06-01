@@ -33,7 +33,7 @@
 </head>
 
 <body>
-
+    <!-- Open modal -->
     <nav class="menu-header">
         <a href="#" class=" btn-get-login-registration  get-login">
             <i class="far fa-user"></i>
@@ -43,6 +43,32 @@
 
     <div class="container mt-5">
         <h1 class="text-center">Đăng nhập</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-login">
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">User name</label>
+                    <input value="admin" type="text" class="form-control" id="username" placeholder="username">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input value="" type="text" class="form-control" id="password" placeholder="password">
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Quên mật khẩu</label>
+                </div>
+                <!-- <button onclick="checkLogin()" type="submit" class="check-login  btn btn-primary">Submit</button> -->
+            </form>
+            <!-- Đặt nút ra ngoài thẻ form là đúng -->
+            <button onclick="checkLogin()" type="submit" class="check-login  btn btn-success">ĐĂNG NHẬP</button>
+
+        </div>
     </div>
 
 
@@ -61,13 +87,15 @@
                     <input type="text" placeholder="Tên đăng nhập">
 
                     <input type="password" placeholder="Mật khẩu">
-                    
+
                     <div class="forgot-password">
                         <i class="fas fa-question"></i>
                         <span>Quên mật khẩu</span>
                     </div>
-                    
+
+
                     <button class="btn btn-success">Đăng nhập</button>
+
 
                     <h6 class="text-center">Hoặc đăng nhập bằng</h6>
 
@@ -78,7 +106,7 @@
                     </div>
                 </div>
 
-                
+
             </div>
             <!-- Modal content-->
 

@@ -4,18 +4,20 @@ console.log("Thêm thông tin học sinh")
 // Khi ấn nút add sẽ đưa data từ ô input lưu vào biến sau đưa và nguồn data trước đó
 // mỗi trường là mỗi key phải trung 100% so với data của api add vào để hiển thị
 $(".btn-add-data-save").click(function () {
+    // validateInput()
 
-    let newUser = {
+    // if (isValidInput) {
+        let newUser = {
 
-        firstName: $("#first-name").val(),
-        lastName: $("#last-name").val(),
-        birthday: $("#birthday").val(),
-        email: $("#email").val(),
-        phone: $("#phone").val(),
-    };
+            firstName: $("#first-name").val(),
+            lastName: $("#last-name").val(),
+            birthday: $("#birthday").val(),
+            email: $("#email").val(),
+            phone: $("#phone").val(),
+        };
 
-    addUserApi(newUser);
-
+        addUserApi(newUser);
+    // }
 });
 
 function addUserApi(user) {
@@ -29,6 +31,3 @@ function addUserApi(user) {
         window.location.href = "/";
     });
 }
-
-
-    

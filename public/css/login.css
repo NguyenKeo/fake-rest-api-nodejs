@@ -11,109 +11,112 @@
   text-decoration: none;
 }
 .menu-header {
-    max-width: 1920px;
-    height: 60px;
-    background-color: #34465C;
-    margin: auto;
+  max-width: 1920px;
+  height: 60px;
+  background-color: #34465c;
+  margin: auto;
 }
 .get-login {
-    position: relative;
-    top: 11.5px;
-    left: 1310px;
-    color: white;
-    font-size: 22px;
+  position: relative;
+  top: 11.5px;
+  left: 97.5%;
+  color: white;
+  font-size: 22px;
 }
 .get-login:hover {
-    color: white;
+  color: white;
 }
-
+/* form-login */
+.form-login {
+  /* border: 0.1px solid red; */
+  margin: auto;
+  max-width: 500px;
+}
 
 /* Start modal */
 .fade:not(.show) {
-    /* add jquery */
-    opacity: 1;
+  /* add jquery */
+  /* opacity: 1; */
+}
+.modal {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 1060;
+  /* add jquery */
+  /* display: block;  */
+  width: 100%;
+  height: 100%;
+  overflow: inherit;
+  outline: 0;
+  background-color: rgba(158, 158, 158, 0.5);
+}
+.modal-dialog {
+  max-width: 400px;
+  height: 463px;
+  background: rgb(255, 255, 255);
+  margin-top: 9%;
+  border-radius: 4px;
+  animation: fadeout 0.2s linear;
+}
+@keyframes fadeout {
+  0% {
+    opacity: 0;
   }
-  .modal {
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    z-index: 1060;
-    /* add jquery */
-    display: block; 
-    width: 100%;
-    height: 100%;
-    overflow: inherit;
-    outline: 0;
-    background-color: rgba(158, 158, 158, 0.5);
+  100% {
+    opacity: 0.5;
   }
-  .modal-dialog {
-    max-width: 400px;
-    height: 463px;
-    background: rgb(255, 255, 255);
-    margin-top: 9%;
-    border-radius: 4px;
-    animation: fadeout 0.2s linear;
-  }
-  @keyframes fadeout {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0.5;
-    }
-  }
+}
 
 /* Start modal content */
 .registration-form {
-    max-width: 100%;
-    height: 100%;
-    
+  max-width: 100%;
+  height: 100%;
 }
 .choose-registration {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .choose-registration span {
-    border: 0.1px solid rgb(198, 198, 198);
-    width: 50%;
-    height: 58px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;   
+  border: 0.1px solid rgb(198, 198, 198);
+  width: 50%;
+  height: 58px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .form-login {
-    /* border: 0.1px solid red; */
-    display: flex;
-    flex-direction: column;
-    grid-gap: 30px;
-    padding: 40px 40px;
+  /* border: 0.1px solid red; */
+  display: flex;
+  flex-direction: column;
+  grid-gap: 30px;
+  padding: 40px 40px;
 }
 .form-login-input input {
-    height: 35px;
-    /* background: #E8F0FE; */
-    /* border: none; */
-    border-bottom: 0.1px solid black;
+  height: 35px;
+  /* background: #E8F0FE; */
+  /* border: none; */
+  border-bottom: 0.1px solid black;
 }
 .forgot-password i {
-    background: #464646;
-    color: white;
-    border-radius: 50%;
-    padding: 3px 4px;
-    font-size: 9px;
-    font-weight: 600;
+  background: #464646;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 4px;
+  font-size: 9px;
+  font-weight: 600;
 }
 
 .icons-login-by {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    grid-gap: 30px
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 30px;
 }
 /* End modal content */
 
-
-  /* End modal */
+/* End modal */
