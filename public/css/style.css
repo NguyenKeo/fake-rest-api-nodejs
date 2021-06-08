@@ -21,7 +21,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   margin-top: 10px;
 }
@@ -38,6 +38,11 @@
   color: rgba(0, 167, 81, 1) !important;
   border: none !important;
   border: 0.1px solid rgba(0, 167, 81, 1) !important;
+  border-radius: 4px;
+}
+.button-filter {
+  color: white;
+  padding: 8px 15px;
   border-radius: 4px;
 }
 /* Nút sửa data */
@@ -59,12 +64,19 @@
   --bs-table-bg: #ececec !important;
 }
 /* Đổi màu nền măc định hover(xam đậm) của thân bảng data */
-.table-hover>tbody>tr:hover {
+.table-hover > tbody > tr:hover {
   --bs-table-accent-bg: #c2c2c2 !important;
   /* color: var(--bs-table-hover-color) !important; */
 }
 /* End Danh sách học viên */
 
+/* pagination */
+.pagination {
+  /* border: 0.1px dotted red; */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Start modal */
 .fade:not(.show) {

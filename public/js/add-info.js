@@ -4,9 +4,9 @@ console.log("Thêm thông tin học sinh")
 // Khi ấn nút add sẽ đưa data từ ô input lưu vào biến sau đưa và nguồn data trước đó
 // mỗi trường là mỗi key phải trung 100% so với data của api add vào để hiển thị
 $(".btn-add-data-save").click(function () {
-    // validateInput()
+    validateInput()
 
-    // if (isValidInput) {
+    if (isValidInput) {
         let newUser = {
 
             firstName: $("#first-name").val(),
@@ -17,7 +17,7 @@ $(".btn-add-data-save").click(function () {
         };
 
         addUserApi(newUser);
-    // }
+    }
 });
 
 function addUserApi(user) {

@@ -18,12 +18,12 @@ function loadDoc() {
 
                 content += `
                 <tr>
-                    <th>${users[i].lastName}</th>
+                    <th>${user.lastName}</th>
                     <th>${user.firstName}</th>
 
-                    <td>${users[i].birthday}</td>
-                    <td>${users[i].email}</td>
-                    <td>${users[i].phone}</td>
+                    <td>${user.birthday}</td>
+                    <td>${user.email}</td>
+                    <td>${user.phone}</td>
 
                     <td class="text-center td-edit-btn">
                        
@@ -32,7 +32,7 @@ function loadDoc() {
                             <span>Chỉnh sửa</span>
                         </a>
 
-                        <a  onclick="removeUser('${users[i].id}')" 
+                        <a  onclick="removeUser('${user.id}', this)" 
                             href="#" class="btn-remove link-danger text-decoration-none px-1" data-bs-toggle="modal"
                             data-bs-target="#removeModal">
                             <i class="fas fa-trash-alt"></i>
@@ -52,7 +52,12 @@ function loadDoc() {
 
         } else if (this.readyState == 4 && this.status == 404) {
             // Thông báo
-            $('#not-found-user-404').text('Không tìm thấy user - 404').css("font-size", "50px")
+            // $('#not-found-user-404').text('Không tìm thấy user - 404!')
+            // .css("font-size", "50px")
+            // .css("font-weight", "800")
+            // .css("color", "red")
+            // .css("text-align", "center")
+            
             console.log("Không tìm thấy user");
         }
     };
@@ -92,30 +97,35 @@ console.log('id công khai: ', id_cong_khai)
 // $('.btn-remove').click(removeUser)  
 // Đã gán onclick rồi không gần gọi thẻ gán click nữa
 
-function removeUser(id) {
+function removeUser(id, dataDel) {
     console.log("Xóa")
     console.log("id", id)
+    // console.log('this', this)
+    console.log('dataDel', dataDel)
+
     // Chạy hàm mở bảng form modal
     alert("Bạn có chắc chắn muốn xóa học viên này?")
 
-    let formData = {
-        method: "Delete",
-        Headers: {
-            "Content-Type": "application/json",
-        },
-    };
-    fetch("http://localhost:3000/users/" + id, formData).then(function () {
-        loadDoc();
-    });
-
-    // $.ajax({
-    //     method: "DELETE",
-    //     url: "/users" + id,
-
-    // })
-    // .done(function () {
-    //     window.location.href = "/";
+    // let formData = {
+    //     method: "Delete",
+    //     Headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    // };
+    // fetch("http://localhost:3000/users/" + id, formData).then(function () {
+    //     loadDoc();
     // });
+
+    $.ajax({
+        method: "DELETE",
+        url: "/users/" + id,
+
+    })
+    .done(function () {
+        // window.location.href = "/";
+        // $('#table-users').children('tr:first-child').remove()
+       $(dataDel).parent().parent().remove()
+    });
 }
 
 // Đóng Modal - nút Hủy bỏ

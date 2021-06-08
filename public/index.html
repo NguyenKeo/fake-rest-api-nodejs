@@ -38,19 +38,36 @@
         <h1 class="text-center">Danh sách sinh viên</h1>
     </div>
 
-    <div class="container mt-3" id="not-found-user-404">
+    <div class="container mt-3 " id="not-found-user-404">
 
         <div class="buttons">
-            <div class="btn-add-student ">
-                <a href="./html/add-form.html" class=" btn btn-success button">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Thêm học viên</span>
-                </a>
+
+            <a href="./html/add-form.html" class=" btn btn-success button">
+                <i class="fas fa-plus-circle"></i>
+                <span>Thêm học viên</span>
+            </a>
+
+            <div>
+                <input type="text" class="">
+
+                <div class="btn-filter-data-student  btn btn-primary button-filter">
+                    <i class="fas fa-filter"></i>
+                    <span>Lọc</span>
+                </div>
 
             </div>
+
+            <div>
+                <span for="name" class="col-sm-3 col-form-label">Tìm kiếm </span>
+                <input type="text" class="">
+                <div class="btn-filter-data-student  btn btn-primary button-filter">
+                    <i class="fas fa-filter"></i>
+                </div>
+            </div>
+
         </div>
 
-
+        <!-- User data -->
         <div class="table-responsive mt-4">
             <table class="table table-primary table-hover table-bordered border-white">
                 <thead class="table-dark">
@@ -70,7 +87,8 @@
 
                 <tbody id="table-users">
                     <tr>
-                        <th scope="row">Brendan Eich</th>
+                        <th scope="row">Brendan </th>
+                        <th>Eich</th>
                         <td>04/07/1961</td>
                         <td>Eich@sc.edu</td>
                         <td>408-656-9316</td>
@@ -96,7 +114,26 @@
 
                 </tbody>
             </table>
-        </div>
+        </div> <!-- User data -->
+
+        <!-- pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+
+                <li class="page-item"><a class="page-link" onclick=""  aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+
+                <li class="page-item"><a class="page-link" onclick="pagination(1)"  >1</a></li>
+                <li class="page-item"><a class="page-link" onclick="pagination(2)"  >2</a></li>
+                <li class="page-item"><a class="page-link" onclick="pagination(3)"  >3</a></li>
+                <li class="page-item"><a class="page-link" onclick="pagination(4)"  >4</a></li>
+                <li class="page-item"><a class="page-link" onclick="pagination(5)"  >5</a></li>
+
+                <li class="page-item"> <a class="page-link" onclick=""  aria-label="Next"><span aria-hidden="true">&raquo;</span></a> </li>
+
+            </ul>
+
+        </nav> <!-- pagination -->
+
 
     </div> <!-- container TABLE -->
 
@@ -140,38 +177,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- File Js -->
     <script src="./js/main-api.js"></script>
-    <!-- <script src="./js/edit-infor.js"></script> -->
     <script src="./js/add-info.js"></script>
-    <!-- <script src="./js/del-info.js"></script> -->
+
+    <script src="./js/pagination.js"></script>
+
 
 </body>
 
 </html>
-<!-- 
-<tr>
-    <th>${users[i].lastName}</th>
-    <th>${user.firstName}</th>
-
-    <td>${users[i].birthday}</td>
-    <td>${users[i].email}</td>
-    <td>${users[i].phone}</td>
-
-    <td class="text-center td-edit-btn">
-
-        <a href="./html/edit-form.html?id=${user.id}" style="color: #01A4B6;"
-            class="btn-open-edit-modal   text-decoration-none px-1">
-            <i class="fas fa-edit"></i>
-            <span>Chỉnh sửa</span>
-        </a>
-
-        <a onclick="removeUser('${users[i].id}')" href="#" class="btn-remove link-danger text-decoration-none px-1"
-            data-bs-toggle="modal" data-bs-target="#removeModal">
-            <i class="fas fa-trash-alt"></i>
-            <span>Xóa</span>
-        </a>
-    </td>
-
-</tr>
-</a>
-</td>
-</tr> -->

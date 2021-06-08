@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "Administrator 2",
-      "lastName": "Admin 23",
-      "birthday": "1994-03-23",
-      "email": "admin@gmail.com",
-      "phone": "933-658-1213",
-      "modifiedAt": 1622090917804
-    },
-    {
       "id": 2,
       "firstName": "Alberta",
       "lastName": "Farncomb",
@@ -152,6 +143,33 @@
       "email": "nguyentrungnguyenth14@gmail.com",
       "phone": "0988360115",
       "modifiedAt": 1622127727194
+    },
+    {
+      "id": 12,
+      "firstName": "Nguyên",
+      "lastName": "Nguyễn Quang",
+      "birthday": "1996-02-02",
+      "email": "abc_123@gmail.com",
+      "phone": "0981234567",
+      "modifiedAt": 1622612529836
+    },
+    {
+      "id": 13,
+      "firstName": "Nguyên",
+      "lastName": "Nguyễn Vũ",
+      "birthday": "1996-02-22",
+      "email": "nguyen@gmail.com",
+      "phone": "09883601410",
+      "modifiedAt": 1623058947848
+    },
+    {
+      "id": 14,
+      "firstName": "Long",
+      "lastName": "Hải",
+      "birthday": "1998-02-02",
+      "email": "abc_123@gmail.com",
+      "phone": "123456789",
+      "modifiedAt": 1623141057789
     }
   ],
   "products": [
