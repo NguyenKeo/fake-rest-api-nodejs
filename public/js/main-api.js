@@ -1,22 +1,25 @@
 console.log("File API GET data")
 
-// Render thông tin tất cả users ra bảng
-function loadDoc() {
-    var xhttp = new XMLHttpRequest();
+let currentPage = 1;
 
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.   status == 200) {
-            // Chọc và responseText của chức Năng onreadystatechange Trong phương thức XMLHttpRequest
-            // Chuyển kiểu dữ liệu về dạng Mảng? và lấy giữ liệu ra
-            const users = JSON.parse(this.responseText);
-            console.log('All users: ', users)
-            console.log("id sinh viên-users.id ", users.id)
-            let content = "";
+// Ready function
+$(function () {
+    getUsersByPageApi(currentPage);
+});
 
-            for (let i = 0; i < users.length; i++) {
-                const user = users[i];
+function renderAllUsers() {
+    $.ajax({
+        url: 'http://localhost:3000/users',
+        method: 'GET'
+    }).done(function (data) {
+        console.log('Ajax tả về 1 mảng data:', data)
 
-                content += `
+        let content = "";
+
+        for (let i = 0; i < data.length; i++) {
+            const user = data[i];
+
+            content += `
                 <tr>
                     <th>${user.lastName}</th>
                     <th>${user.firstName}</th>
@@ -45,41 +48,92 @@ function loadDoc() {
                     </td>
                 </tr>
                 `;
-            }
-            // Tìm đến id của thẻ có id đó, và thay đội dung html của thẻ bên trong thẻ bọc đó
-            // document.getElementById("table-users").innerHTML = content;
-            $("#table-users").html(content);
-
-        } else if (this.readyState == 4 && this.status == 404) {
-            // Thông báo
-            // $('#not-found-user-404').text('Không tìm thấy user - 404!')
-            // .css("font-size", "50px")
-            // .css("font-weight", "800")
-            // .css("color", "red")
-            // .css("text-align", "center")
-            
-            console.log("Không tìm thấy user");
         }
-    };
-    // Lấy danh sách data từ file json công khai ra, để động /users mới được
-    // xhttp.open("GET", "http://localhost:3000/users", true);
-    xhttp.open("GET", "/users", true);
-    xhttp.send();
+        $("#table-users").html(content);
+
+    })
+
+
 }
-// Luôn này hàm để gọi-GET dữ liệu hiển thị lên bảng
-loadDoc()
+// renderAllUsers()
+
+
+
+// Search Ấn nút lấy giá trị ô input
+// let inputSearch = $('.input-search').val();
+
+let inputSearch;
+$('.btn-search-data-student').click(search);
+
+function search() {
+    inputSearch = $('.input-search').val()
+    console.log('inputSearch: ', inputSearch)
+
+    $.ajax(`http://localhost:3000/users?q=${inputSearch}`, {
+        method: "GET"
+    }).done(function (data) {
+        console.log('data', data)
+
+        let contentSearch = "";
+
+        for (let i = 0; i < data.length; i++) {
+            console.log('data[i]', data[i])
+
+            let dataSearch = data[i];
+
+            contentSearch +=
+                `
+            <tr>
+            <th>${dataSearch.lastName}</th>
+            <th>${dataSearch.firstName}</th>
+
+            <td>${dataSearch.birthday}</td>
+            <td>${dataSearch.email}</td>
+            <td>${dataSearch.phone}</td>
+
+            <td class="text-center td-edit-btn">
+               
+                <a  href="./html/edit-form.html?id=${dataSearch.id}" style="color: #01A4B6;" class="btn-open-edit-modal   text-decoration-none px-1">
+                    <i class="fas fa-edit"></i>
+                    <span>Chỉnh sửa</span>
+                </a>
+
+                <a  onclick="removeUser('${dataSearch.id}', this)" 
+                    href="#" class="btn-remove link-danger text-decoration-none px-1" data-bs-toggle="modal"
+                    data-bs-target="#removeModal">
+                    <i class="fas fa-trash-alt"></i>
+                    <span>Xóa</span>
+                </a>
+            </td>
+        
+                 </tr>
+                </a>
+            </td>
+        </tr>
+
+            `
+        }
+
+
+
+
+        $("#table-users").html(contentSearch);
+    })
+
+
+
+}
 
 // Mở Modal 
 // Nút xóa được vòng lặp render có onclick chạy hàm ở Modal
 // let id_del_user;
 // console.log('id_del_user: ', id_del_user)
-let id_cong_khai;
+
 
 
 function openModalRegistration(id) {
     console.log('Mở Modal - Xóa')
     console.log('id: ', id)
-    id_cong_khai = id;
 
     $(".modal-del").slideDown(100);
     $('.modal-del').css("display", "block")
@@ -88,7 +142,6 @@ function openModalRegistration(id) {
     // $('.btn-confirm-del').
 
 }
-console.log('id công khai: ', id_cong_khai)
 
 // Nút xác nhận như lưu / chấp nhận - xóa
 
@@ -117,15 +170,15 @@ function removeUser(id, dataDel) {
     // });
 
     $.ajax({
-        method: "DELETE",
-        url: "/users/" + id,
+            method: "DELETE",
+            url: "/users/" + id,
 
-    })
-    .done(function () {
-        // window.location.href = "/";
-        // $('#table-users').children('tr:first-child').remove()
-       $(dataDel).parent().parent().remove()
-    });
+        })
+        .done(function () {
+            // window.location.href = "/";
+            // $('#table-users').children('tr:first-child').remove()
+            $(dataDel).parent().parent().remove()
+        });
 }
 
 // Đóng Modal - nút Hủy bỏ
@@ -138,20 +191,3 @@ function closeModalRegistration() {
     $('.modal-del').css("display", "none")
     $('input').html('')
 }
-
-
-
-
-
-
-// for (let i = 0; i < responseText.length; i++) {
-//     $(".list-datas-detail:first").clone().appendTo(".table-list-datas");
-//     document.getElementsByClassName('name')[i].innerHTML = responseText[i].name
-//     document.getElementsByClassName('email')[i].innerHTML = responseText[i].email
-//     document.getElementsByClassName('password')[i].innerHTML = responseText[i].password
-//     document.getElementsByClassName('phone')[i].innerHTML = responseText[i].phone
-// }
-//   if ( i < responseText.length - 1) {
-
-//     $(".list-datas-detail:first").clone().appendTo(".table-list-datas"); 
-//   }
